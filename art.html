@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>怕孩子的艺术天赋被扼杀？快来看看这些绘本</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    body,
+    html,
+    .wrap {
+      width: 100%;
+      height: 100%;
+    }
+
+    .wrap img {
+      width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <img alt="" id="img1">
+    <img alt="" id="img2">
+    <img alt="" id="img3">
+    <img alt="" id="img4">
+    <img alt="" id="img5">
+    <img alt="" id="img6">
+    <img alt="" id="img7">
+    <img alt="" id="img8">
+    <img alt="" id="img9">
+  </div>
+</body>
+
+
+<script>
+  function loadNextImg(index) {
+    let img = document.getElementById('img' + (index + 1))
+    if (index < 9) {
+      img.src = './images/art_0' + (index + 1) + '.jpg'
+      img.onload = function () {
+        loadNextImg(index + 1)
+      }
+    }
+  }
+  loadNextImg(0)
+  // 创建一个数组，存放要加载的图片src
+  // var src = new Array();
+  // src.push('./images/art_01.jpg');
+  // src.push('./images/art_02.jpg');
+  // src.push('./images/art_03.jpg');
+
+  // // 图片按顺序加载，使用递归算法，直到加载完最后一张图片，退出递归
+  // function preload(src, index) {
+  //   index = index || 0;
+  //   if (index >= 10) {
+  //     return false;
+  //   }
+  //   if (src && src.length > index) {
+  //     var img = new Image();
+  //     img.onload = function () {
+  //       preload(src, index + 1);
+  //     }
+  //     img.src = src[index];
+  //   }
+  // }
+  // preload(src);
+</script>
+
+</html>

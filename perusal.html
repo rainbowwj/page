@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>泛读十本不如精读一本，你所不知的绘本精读</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    body,html,.wrap{
+      width: 100%;
+      height: 100%;
+    }
+    .wrap img{
+      width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img alt="" id="img1">
+    <img alt="" id="img2">
+    <img alt="" id="img3">
+    <img alt="" id="img4">
+    <img alt="" id="img5">
+    <img alt="" id="img6">
+    <img alt="" id="img7">
+    <img alt="" id="img8">
+    <img alt="" id="img9">
+    <img alt="" id="img10">
+    <img alt="" id="img11">
+    <img alt="" id="img12">
+  </div>
+  <script>
+    function loadNextImg(index) {
+      let img = document.getElementById('img' + (index + 1))
+      if (index < 12) {
+        if(index< 9){
+          img.src = './images/perusal_0' + (index + 1) + '.jpg'
+        }else{
+          img.src = './images/perusal_' + (index + 1) + '.jpg'
+        }
+        img.onload = function () {
+          loadNextImg(index + 1)
+        }
+      }
+    }
+    loadNextImg(0)
+  </script>
+</body>
+</html>
